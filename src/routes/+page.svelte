@@ -7,6 +7,10 @@
     let bottomValues = [...originalBottomValues];
     let isToggled = false;
 
+    // Array om bij te houden of een specifieke div gedraaid is
+    let rotated = [false, false, false]; 
+
+
     function updateBottomValues() {
         if(!isToggled){
             bottomValues = bottomValues.map(value => value + 7);
@@ -18,10 +22,10 @@
 </script>
 <body>
      <main>
+        <div class="cart" style="bottom: {bottomValues[2]}rem; background: green; "><Socials></Socials></div>
+        <div class="cart" style="bottom: {bottomValues[1]}rem; background: blue; "><LinkedIn></LinkedIn></div>
+        <div class="cart" style="bottom: {bottomValues[0]}rem; background: red; "><Music></Music></div>
         <div class="coverup"></div>
-        <div style="bottom: {bottomValues[0]}rem; background: red; z-index: 3; "><Music></Music></div>
-        <div style="bottom: {bottomValues[1]}rem; background: blue; z-index: 2; "><LinkedIn></LinkedIn></div>
-        <div style="bottom: {bottomValues[2]}rem; background: green; z-index: 1; "><Socials></Socials></div>
         <button on:click={updateBottomValues}>
         </button>
      </main>
@@ -58,17 +62,17 @@
     }
     button:hover{
         bottom: 15.5rem;
-        transition: 0.4s;
+        transition: 0.4s ease;
+        cursor: pointer;
     }
-    div{
+    .cart{
         position: absolute;
-        margin-right: 2rem;
         border-radius: 15px;
         width: 20rem;
         height: 16rem;
         rotate: 90deg;
-        z-index: 1;
-        transition: .5s;  
+        transition: .5s ease;
+        cursor: pointer; 
     }
     .coverup{
         position: absolute;
@@ -78,6 +82,13 @@
         bottom: 0rem;
         rotate: 0deg;
         padding-bottom: 3rem;
+        z-index: 3;
+        cursor: auto;
+    }
+    .cart:hover{
+        rotate: 0deg;
+        scale: 1.5;
+        transition: .8s;
         z-index: 4;
     }
 </style>
