@@ -77,11 +77,12 @@
     .coverup{
         position: absolute;
         background: rgb(37, 37, 37);
-        width: 19rem;
+        width: 18rem;
         height: 22rem;
         bottom: 0rem;
         rotate: 0deg;
         padding-bottom: 3rem;
+        margin-left: 1rem;
         z-index: 3;
         cursor: auto;
     }
