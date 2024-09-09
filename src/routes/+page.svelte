@@ -3,7 +3,7 @@
     import LinkedIn from './LinkedIn.svelte';
     import Socials from './SocialCard.svelte';
     
-    let originalBottomValues = [2, 5, 8];
+    let originalBottomValues = [2, 3.5, 5];
     let bottomValues = [...originalBottomValues];
     let isToggled = false;
 
@@ -63,17 +63,17 @@
     div{
         position: absolute;
         margin-right: 2rem;
+        border-radius: 15px;
         width: 20rem;
         height: 16rem;
         rotate: 90deg;
         z-index: 1;
-        transition: .5s;
-        
+        transition: .5s;  
     }
     .coverup{
         position: absolute;
         background: rgb(37, 37, 37);
-        width: 18rem;
+        width: 19rem;
         height: 22rem;
         bottom: 0rem;
         rotate: 0deg;
