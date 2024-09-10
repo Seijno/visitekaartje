@@ -2,14 +2,10 @@
 	import Music from './MusicCard.svelte';
     import LinkedIn from './LinkedIn.svelte';
     import Socials from './SocialCard.svelte';
-	import MusicCard from './MusicCard.svelte';
     
     let originalBottomValues = [2.5, 4.5, 6.5];
     let bottomValues = [...originalBottomValues];
     let isToggled = false;
-
-    // Array om bij te houden of een specifieke div gedraaid is
-    let rotated = [false, false, false]; 
 
 
     function updateBottomValues() {
@@ -22,10 +18,11 @@
     }
 </script>
 <body>
+    <h1>The cardholder!</h1>
      <main>
         <div class="cart" style="bottom: {bottomValues[2]}rem; background: green; "><Socials></Socials></div>
         <div class="cart" style="bottom: {bottomValues[1]}rem; background: blue; "><LinkedIn></LinkedIn></div>
-        <div class="cart" style="bottom: {bottomValues[0]}rem; background: black;"><Music></Music></div>
+        <a class="mobileOnly" href="https://open.spotify.com/artist/7jUFx2NIq6vFbcfJptuKlU"><div class="cart" style="bottom: {bottomValues[0]}rem; background: black;"><Music></Music></div></a>
         <div class="coverup"></div>
         <button on:click={updateBottomValues}>
         </button>
@@ -98,4 +95,9 @@
         transition: .8s;
         z-index: 4;
     }
+    @media screen and (max-width: 700px) {
+        main {
+        left: 25%;
+    }
+}
 </style>

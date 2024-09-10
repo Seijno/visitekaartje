@@ -29,11 +29,12 @@
     height: 100%;
 }
 div{
-    border-radius: 15px;
-    border: #1ed760 solid .5rem;
+    border-radius: 5px 5px 15px 15px;
+    /* border: #1ed760 solid .5rem; */
     display: flex;
     color: black;
     background: #1ed760;
+    padding-bottom: 1.3rem;
 }
 ul{
     display: flex;
