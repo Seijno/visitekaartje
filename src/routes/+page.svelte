@@ -2,8 +2,9 @@
 	import Music from './MusicCard.svelte';
     import LinkedIn from './LinkedIn.svelte';
     import Socials from './SocialCard.svelte';
+	import MusicCard from './MusicCard.svelte';
     
-    let originalBottomValues = [2, 3.5, 5];
+    let originalBottomValues = [2.5, 4.5, 6.5];
     let bottomValues = [...originalBottomValues];
     let isToggled = false;
 
@@ -24,7 +25,7 @@
      <main>
         <div class="cart" style="bottom: {bottomValues[2]}rem; background: green; "><Socials></Socials></div>
         <div class="cart" style="bottom: {bottomValues[1]}rem; background: blue; "><LinkedIn></LinkedIn></div>
-        <div class="cart" style="bottom: {bottomValues[0]}rem; background: red; "><Music></Music></div>
+        <div class="cart" style="bottom: {bottomValues[0]}rem; background: black;"><Music></Music></div>
         <div class="coverup"></div>
         <button on:click={updateBottomValues}>
         </button>
@@ -33,15 +34,20 @@
 
 <style>
     body{
-        background: rgb(215, 207, 207);
+        position: relative;
+        background: rgb(255, 255, 255);
         margin: 0;
         padding: 0;
+        height: 100vh;
+        overflow: hidden;
     }
     main{
         background: rgb(37, 37, 37);
         position: absolute;
-        bottom: 0;
+        margin: 0 auto;
+        top: 50%;
         left: 40%;
+        transform: translateY(-30%);
         width: 20rem;
         height: 25rem;
         border: 1px solid black;
