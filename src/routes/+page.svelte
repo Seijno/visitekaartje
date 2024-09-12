@@ -3,7 +3,7 @@
     import LinkedIn from './LinkedIn.svelte';
     import Socials from './SocialCard.svelte';
     
-    let originalBottomValues = [2.5, 4.5, 6.5];
+    let originalBottomValues = [2.5, 5, 7.5];
     let bottomValues = [...originalBottomValues];
     let isToggled = false;
 
@@ -20,9 +20,9 @@
 <body>
     <h1>The cardholder!</h1>
      <main>
-        <div class="cart" style="bottom: {bottomValues[2]}rem; background: green; "><Socials></Socials></div>
-        <div class="cart" style="bottom: {bottomValues[1]}rem; background: blue; "><LinkedIn></LinkedIn></div>
-        <a class="mobileOnly" href="https://open.spotify.com/artist/7jUFx2NIq6vFbcfJptuKlU"><div class="cart" style="bottom: {bottomValues[0]}rem; background: black;"><Music></Music></div></a>
+        <a href="https://linktr.ee/seijnovannieuwkoop"><div class="cart" style="bottom: {bottomValues[2]}rem; background: rgb(255,222,98); background: linear-gradient(117deg, rgba(255,222,98,1) 25%, rgba(0,243,240,1) 100%); "><Socials></Socials></div></a>
+        <a href="https://www.linkedin.com/in/seijno-van-nieuwkoop-17852020a/"><div class="cart" style="bottom: {bottomValues[1]}rem; background: #0066c8; "><LinkedIn></LinkedIn></div></a>
+        <a href="https://open.spotify.com/artist/7jUFx2NIq6vFbcfJptuKlU"><div class="cart" style="bottom: {bottomValues[0]}rem; background: black;"><Music></Music></div></a>
         <div class="coverup"></div>
         <button on:click={updateBottomValues}>
         </button>
@@ -32,7 +32,8 @@
 <style>
     body{
         position: relative;
-        background: rgb(255, 255, 255);
+        background: rgb(248,0,255);
+        background: linear-gradient(153deg, rgba(248,0,255,1) 0%, rgba(0,243,240,1) 100%);
         margin: 0;
         padding: 0;
         height: 100vh;
@@ -43,7 +44,7 @@
         position: absolute;
         margin: 0 auto;
         top: 50%;
-        left: 40%;
+        left: 38%;
         transform: translateY(-30%);
         width: 20rem;
         height: 25rem;
@@ -95,9 +96,13 @@
         transition: .8s;
         z-index: 4;
     }
+    h1{
+        text-align: center;
+        width: 100%;
+    }
     @media screen and (max-width: 700px) {
         main {
-        left: 25%;
+        left: 17%;
     }
 }
 </style>
